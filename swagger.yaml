@@ -1,0 +1,65 @@
+swagger: '2.0'
+info:
+  description: yemre.ates
+  version: 1.0.0
+  title: Loan Inquiry
+  contact:
+    email: yemre.ates@hotmail.com
+  license:
+    name: Apache 2.0
+    url: 'http://www.apache.org/licenses/LICENSE-2.0.html'
+host: localhost:8090
+basePath: "/"
+schemes:
+  - http
+paths:
+  /loanInquiry:
+    post:
+      summary: Save customer who inquiries for loan
+      parameters:
+        - in: body
+          name: customer
+          description: The customer to create.
+          schema:
+            items:
+              $ref: '#/definitions/req'
+      description: ""
+      responses:
+        '200':
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/res'
+        '400':
+          description: Throw Exception(Api Error)
+      produces:
+        - application/json
+        
+definitions:
+  req:
+    type: object
+    title: Customer Object
+    properties:
+      income:
+        type: integer
+        format: int64
+      birthYear:
+        type: integer
+        format: int64
+      tckn:
+        type: string
+      name:
+        type: string
+      msisdn:
+        type: string
+  res:
+    type: object
+    title: Response Object for Customer Service
+    properties:
+      limit:
+        type: integer
+        format: int64
+      loanStatus:
+        type: string
+      message:
+        type: string

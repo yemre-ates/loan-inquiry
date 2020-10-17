@@ -1,0 +1,79 @@
+
+<style>
+#but_inquiry {
+	background-color: #FF5733;
+	border-color: #FF5733;
+	align: right
+}
+</style>
+<div style="padding-left: 130px; padding-right: 200px;">
+	<h1>{{headingTitle}}</h1>
+	<p>This loan inquiry will help you inquiry loan score ..</p>
+
+	<div class="col-md-12">
+		<div class="form-group">
+			<label class="col-md-1">TCKN:</label>
+			<div class="col-md-2">
+				<input ng-model="jsonObj.tckn" ui-mask="{{tcknPattern}}"
+					class="form-control" type="text" />
+			</div>
+			<label class="col-md-1">Name Surname</label>
+			<div class="col-md-2">
+				<input ng-model="jsonObj.name" class="form-control" type="text"
+					placeholder="Enter Name Surname" />
+			</div>
+			<label class="col-md-1">Monthly Income:</label>
+			<div class="col-md-2">
+				<input ng-model="jsonObj.income" class="form-control" type="text"
+					placeholder="Enter Income" />
+			</div>
+		</div>
+	</div>
+
+	<br>
+	<br>
+	<br>
+	<div class="col-md-12">
+		<div class="form-group">
+
+			<label class="col-md-1">Phone Number:</label>
+			<div class="col-md-2">
+				<input ng-model="jsonObj.msisdn" ui-mask="{{msisdnPattern}}"
+					class="form-control" type="text" />
+			</div>
+			<label class="col-md-1">Birth Date:</label>
+			<div class="col-md-1">
+				<input ng-model="jsonObj.birthYear" ui-mask="{{birthYearPattern}}"
+					class="form-control" type="text" />
+			</div>
+			<div class="col-md-2"></div>
+			<div class="col-md-1">
+				<button id="but_inquiry" class="btn btn-primary btn-lg"
+					ng-click="inquiry()">
+					Inquiry</a>
+			</div>
+		</div>
+	</div>
+
+	<p>&nbsp</p>
+</div>
+
+<!-- MODAL for  Messages   @YEA -->
+<div id="infoModal" class="modal">
+	<div class="modal-dialog">
+		<div class="modal-content">
+			<div class="modal-body">
+				<div class={{modal}} role="alert">
+					<h4>
+						<strong> {{modalMessage}} </strong>
+					</h4>
+				</div>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn-flat gray" data-dismiss="modal"
+					data-ng-click="dismissCurrentItem">Close</button>
+			</div>
+		</div>
+	</div>
+</div>
+
