@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Configuration;
 
 @Configuration
 @EnableAutoConfiguration
-@ComponentScan("com.kocfinans.loaninquiry")
+@ComponentScan("com.yea.loaninquiry")
 @SpringBootApplication
 public class LoanInquiryApplication {
 
